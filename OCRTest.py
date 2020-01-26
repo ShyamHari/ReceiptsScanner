@@ -89,7 +89,6 @@ def runOCRAlgo(filepath, filename):
     return float(cost)
 
 def ignore():
-    #client = contentful.Client('nbjulodyld5b', '_zUBn2ge9faOWwjv6gNybB6d6KxKAfalGmCdMjP3N3E')
     filename = "receipt"
     for i in range(0, 1, 1):
         print("Processing image #" + str(i))
