@@ -41,6 +41,7 @@ def upload():
         filename = file.filename
         destination = "/".join([target, filename])
         print(target)
+        file.save(destination)
 
     userDict = loadDictFromCSV(os.path.join(APP_ROOT, "data"))
     lengthOfData = len(userDict['date'])
