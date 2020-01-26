@@ -1,6 +1,8 @@
 # ReceiptsScanner
 Python project using OCR to track expenses and receipts for budgeting and for personal use
 
+Made by: Sebastian Kopec, Rehan Ayub, Richard Yang, and Shyam Hari
+
 ## Inspiration
 Initially, our goal was to implement something using computer vision. Since finance was a central theme of this hackathon, we centered our ideation around that. After some thought, we realized that the process of keeping track of purchases through receipts physically was a tedious and unfavorable process. It was also noticed that receipts are the most detailed way to keep track of expenses as a credit statement does not specifically list the items you bought. This project is meant to be a way for people to track their expenses and categorically tell people the nature of expenses they make over a given time period. This would include categorizing groceries, restaurants, and clothing into categories of expenditure. 
 
