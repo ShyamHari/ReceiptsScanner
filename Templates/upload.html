@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<header>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  </header>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Receipt Scanner</title>
+     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/bootstrap.min.css') }}">
+      <script src="https://kit.fontawesome.com/03aa7feabe.js"></script>
+      <style type="text/css">
+      	.example_a {
+			color: #fff !important;
+			text-transform: uppercase;
+			text-decoration: none;
+			background: #60a3bc;
+			padding: 10px;
+			border-radius: 5px;
+			display: inline-block;
+			border: none;
+			transition: all 0.4s ease 0s;
+			}
+
+			.example_a:hover {
+				background: #434343;
+				letter-spacing: 1px;
+				-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+				-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+				box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+				transition: all 0.4s ease 0s;
+				}
+			.grad {
+	  			background: linear-gradient(to bottom, #ffffff 0%, #99ccff 100%);
+			}
+
+			img {
+			  border: 1px solid #ddd; /* Gray border */
+			  border-radius: 4px;  /* Rounded border */
+			  padding: 5px; /* Some padding */
+			  width: 150px; /* Set a small width */
+			}
+
+			.aaaa{
+				margin: auto;
+				width: 400px;
+				text-align: center;
+				background-color: #008CBA;
+				border-radius: 12px;
+
+			}
+
+	    </style>
+	<!-- <style>
+		.button {
+  	background-color: #4CAF50; /* Green */
+  	border: none;
+  	color: white;
+  	padding: 15px 32px;
+  	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 16px;
+	}
+	</style> -->
+</head>
+<body>
+	<div class="container mt-4 grad">
+		<h1 class="display-4 text-center">
+			Receipt Scanner
+			<i class="fas fa-receipt"></i>
+		</h1>
+
+		<br>
+
+		<form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data" class="form-group">
+			<input type="file" name="file" accept="image/*"multiple class="form-control">
+			<br>
+			<input type="submit" class="example_a" value="Upload">
+		</form>
+
+
+		<table class="table table-striped mt-5">
+            <thead>
+                <tr>
+                   <th>Thumbnail</th>
+                   <th>Amount</th>
+                   <th>Date</th>
+                   <th></th> 
+                </tr>
+            </thead>
+		
+ 			<tbody>
+ 			<tr>
+ 				<td><img src="{{ user_image }}" alt="Receipt Thumbnail"></td>
+ 			</tr>
+ 		</tbody>
+        </table>
+    </div>
+	</div>
+
+	<button class="btn-block aaaa" style="text-align:center" ><a href="/download/" style="color:white">Download Transaction Summary</button></a>
+	<div>
+	<p>{{fileUploaded}}</p>
+	<p>{{finalString}} {{today}}</p>
+	<p>Your total cost for the month is: ${{total}}</p>
+	</div>
+</body>
+</html>
