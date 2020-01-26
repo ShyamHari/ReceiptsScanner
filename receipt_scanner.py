@@ -28,7 +28,7 @@ def index():
 @app.route('/download/')
 def downloadFile ():
     #For windows you need to use drive name [ex: F:/Example.pdf]
-    return send_file("C:/Users/Sebastian/Documents/flask_blog/data/userData.csv", attachment_filename="userData.csv")
+    return send_file("/data/userData.csv", attachment_filename="userData.csv")
 
 @app.route("/upload",methods=['POST'])
 def upload():
